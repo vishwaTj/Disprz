@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+.header {
+  position: absolute;
+  top: 2px;
+  left: 650px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Main {
+  width: 100vw;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Container {
+  width: 100vw;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* styling the block of display */
+.Display {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid black;
+  border-radius: 10%;
+  /* margin-bottom: 100px; */
+  width: 250px;
+  height: 450px;
+}
+
+.date {
+  height: 30%;
+  /* width: 100%; */
+}
+
+.appointmentList {
+  height: 70%;
+  width: 100%;
+}
+
+.appointmentForm {
+  height: 70%;
+  width: 100%;
+}
+
+.appointment {
+  margin-bottom: 4px;
+  background-color: yellow;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.time {
+  position: relative;
+  width: 20%;
+  left: -60px;
+}
+
+.title {
+  text-align: center;
+  width: 60%;
+}
+
+/* Input form styling */
+
+.InputForm {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 85%;
+  margin-left: 8px;
+}
+
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.inputLabel input {
+  border-radius: 5px;
+  width: 100%;
+  height: 1.8rem;
+  margin-left: 2px;
+}
+
+.SubmitButton {
+  width: 30%;
+  margin-left: 80px;
+  color: yellow;
+  background-color: blue;
+  height: 1.8rem;
+  border-radius: 5px;
+}
+
+/* Button positioning styles  */
+.LeftButton {
+  /* position: absolute; */
+  top: 280px;
+  left: 270px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-right: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.RightButton {
+  /* position: absolute; */
+  top: 280px;
+  left: 790px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image {
+  height: 50px;
+  width: 50px;
+}
+
+.Center {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.AddButton {
+  margin-top: 10px;
 }

@@ -27,7 +27,6 @@ function App() {
   useEffect(() => {
     let month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
     let date = currentDate.getDate();
-    // let date = currentDate.getDate();
     let year = currentDate.getFullYear();
     setDateString(date + "-" + month + "-" + year);
   }, [currentDate]);

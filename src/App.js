@@ -8,7 +8,7 @@ import add from "./images/add.png";
 function App() {
   const [list, setList] = useState([
     { title: "qa testing", time: 9 },
-    { title: "code developemnt", time: 10 },
+    { title: "", time: 10 },
     { title: "openapi spec", time: 11 },
   ]);
 
@@ -30,7 +30,7 @@ function App() {
     setDateString(date + "-" + month + "-" + year);
   }, [currentDate]);
 
-  const [flag, setflag] = useState(false);
+  const [flag, setflag] = useState(true);
 
   const setInput = (e) => {
     if (e.target.name === "startTime") {
@@ -101,9 +101,8 @@ function App() {
     if (new Date(k) > new Date(k2)) {
       console.log("Yohohoho");
     }
+    setflag(!flag);
   };
-
-  console.log("tool");
 
   return (
     <div className="Main">
@@ -122,11 +121,14 @@ function App() {
         <div className="Center">
           {flag ? (
             <div className="Display">
-              <div className="date">Date Heading</div>
+              <div className="date">{DateString}</div>
               <div className="appointmentList">
                 {list.map((el, i) => {
                   return (
-                    <div className="appointment" key={i}>
+                    <div
+                      className={el.title ? "appointment" : "dotted"}
+                      key={i}
+                    >
                       <div className="time">
                         {el.time < 12 ? el.time + " AM" : el.time + " PM"}
                       </div>{" "}

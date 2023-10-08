@@ -45,7 +45,9 @@
 
 .appointment {
   margin-bottom: 4px;
-  background-color: yellow;
+  background-color: orange;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -67,6 +69,12 @@
   border-bottom: 1px dotted black;
   height: 1px;
   margin-bottom: 20px;
+}
+
+.trash {
+  margin-top: 2px;
+  height: 15px;
+  width: 15px;
 }
 
 /********************* Input form styling ****************************/

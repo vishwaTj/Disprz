@@ -4,6 +4,7 @@ import "./App.css";
 import rightArraow from "./images/right-arrow.png";
 import LeftArraow from "./images/left-arrow.png";
 import add from "./images/add.png";
+import trash from "./images/delete.png";
 
 function App() {
   const [list, setList] = useState([
@@ -104,6 +105,10 @@ function App() {
     setflag(!flag);
   };
 
+  const deleteTask = () => {
+    console.log("Yohoho");
+  };
+
   return (
     <div className="Main">
       <div className="header">Begin Calendar Appointment</div>
@@ -133,6 +138,18 @@ function App() {
                         {el.time < 12 ? el.time + " AM" : el.time + " PM"}
                       </div>{" "}
                       <div className="title">{el.title} </div>
+                      {el.title !== "" ? (
+                        <div>
+                          <img
+                            onClick={deleteTask}
+                            className="trash"
+                            src={trash}
+                            alt="trash"
+                          />
+                        </div>
+                      ) : (
+                        <div></div>
+                      )}
                     </div>
                   );
                 })}

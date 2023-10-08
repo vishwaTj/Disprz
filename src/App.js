@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Task from "./components/tasks";
+import InputForm from "./components/input_form";
 
 import rightArraow from "./images/right-arrow.png";
 import LeftArraow from "./images/left-arrow.png";
 import add from "./images/add.png";
-import trash from "./images/delete.png";
 
 function App() {
   const [list, setList] = useState([
@@ -115,7 +116,6 @@ function App() {
 
       <div className="Container">
         {/* Left button for date change */}
-
         <div className="LeftButton">
           <button onClick={reduceDate}>
             <img className="image" src={LeftArraow} alt="left arrow" />
@@ -125,66 +125,13 @@ function App() {
         {/* Display block of the application */}
         <div className="Center">
           {flag ? (
-            <div className="Display">
-              <div className="date">{DateString}</div>
-              <div className="appointmentList">
-                {list.map((el, i) => {
-                  return (
-                    <div
-                      className={el.title ? "appointment" : "dotted"}
-                      key={i}
-                    >
-                      <div className="time">
-                        {el.time < 12 ? el.time + " AM" : el.time + " PM"}
-                      </div>{" "}
-                      <div className="title">{el.title} </div>
-                      {el.title !== "" ? (
-                        <div>
-                          <img
-                            onClick={deleteTask}
-                            className="trash"
-                            src={trash}
-                            alt="trash"
-                          />
-                        </div>
-                      ) : (
-                        <div></div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <Task list={list} datestring={DateString} deletetask={deleteTask} />
           ) : (
-            <div className="Display">
-              <div className="date">{DateString}</div>
-              <div className="appointmentForm">
-                <form className="InputForm">
-                  <div className="inputLabel">
-                    <label>Title</label>
-                    <input name="title" type="string" onChange={setInput} />
-                  </div>
-                  {/* <div className="inputLabel">
-                <label>Date</label>
-                <input name="date" type="date" onChange={setInput} />
-              </div> */}
-                  <div className="inputLabel">
-                    <label>Start Time</label>
-                    <input name="startTime" type="time" onChange={setInput} />
-                  </div>
-                  <div className="inputLabel">
-                    <label>End Time</label>
-                    <input name="endTime" type="time" onChange={setInput} />
-                  </div>
-                  <input
-                    className="SubmitButton"
-                    type="button"
-                    onClick={InputSubmit}
-                    value="submit"
-                  />
-                </form>
-              </div>
-            </div>
+            <InputForm
+              inputsubmit={InputSubmit}
+              datestring={DateString}
+              setinput={setInput}
+            />
           )}
 
           <div className="AddButton">
@@ -195,7 +142,6 @@ function App() {
         </div>
 
         {/* right button date change */}
-
         <div className="RightButton">
           <button onClick={IncreaseDate}>
             <img className="image" src={rightArraow} alt="right arrow" />
